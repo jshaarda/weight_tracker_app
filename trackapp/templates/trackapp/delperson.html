@@ -1,0 +1,20 @@
+<html>
+<body>
+	{% block content %}
+	<div style="text-align:center;margin-left:auto;margin-right:auto;display:table;"> 
+		<h1 style="margin-top:50px">Delete Person</h1>
+		<table>
+			<tr><td><b>Name:</b></td><td>{{ name }}</td></tr>
+			<tr><td><b>Date:</b></td><td>{{ date }}</td></tr>
+					<tr><td><b>Weight:</b></td><td>{{ weight }}</td></tr>
+			</table>	
+	</div>
+	<div style="text-align:center;margin-left:auto;margin-right:auto;display:table;"> 
+		<p>{{ name }}, {{ date }} {{ msg }}</p>
+		<form action="{% url 'index' %}" method="get">
+			<button style="text-align:center; margin-top:50px" type = “submit”>Back to Main Menu</button>
+		</form>
+	</div>
+	{% endblock %}
+</body>
+</html>

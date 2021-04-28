@@ -1,0 +1,1 @@
+# This application is used to maintain entries on people's weight and create a graph showing them.

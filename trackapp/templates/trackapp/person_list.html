@@ -1,0 +1,62 @@
+<html>
+<body>
+	{% if action == "a" %}
+		<form action="{% url 'addpersonresult' %}" method="get">
+			<div style="text-align:center;margin-left:auto;margin-right:auto;display:table;"> 
+				<h1 style="margin-top:50px">Add New Person</h1>
+				<table>
+					<tr><td><b>Name:</b></td><td><input name="name" type="text"></td></tr>
+					<tr><td><b>Description:</b></td><td><input name="description" type="text"></td></tr>
+				</table>	
+				<button style="text-align:center; margin-top:50px" type = “submit”>Enter</button>
+			</div>
+		</form>
+		<div style="text-align:center;margin-left:auto;margin-right:auto;display:table;"> 
+			<form action="{% url 'index' %}" method="get">
+				<button style="text-align:center; margin-top:50px" type = “submit”>Back to Main Menu</button>
+			</form>
+		</div>
+	{% elif action == "u" %}
+		<form action="{% url 'updpersondesc' %}" method="get">
+			<div style="text-align:center;margin-left:auto;margin-right:auto;display:table;"> 
+				<h1 style="margin-top:50px">Update Person</h1>
+				<table>
+					<tr><td><b>Name:</b></td><td>
+						<select name="name" type="text">
+							{% for person in person_list %}
+								<option>{{ person.name }}</option>
+							{% endfor %}
+						</select> </td></tr>
+					<tr><td><b>Description:</b></td><td><input name="description" type="text"></td></tr>
+				</table>	
+				<button style="text-align:center; margin-top:50px" type = “submit”>Select Person</button>
+			</div>
+		</form>
+		<div style="text-align:center;margin-left:auto;margin-right:auto;display:table;"> 
+			<form action="{% url 'index' %}" method="get">
+				<button style="text-align:center; margin-top:50px" type = “submit”>Back to Main Menu</button>
+			</form>
+		</div>
+	{% else %}
+		<form action="{% url 'delpersonresult' %}" method="get">
+			<div style="text-align:center;margin-left:auto;margin-right:auto;display:table;"> 
+				<h1 style="margin-top:50px">Delete Person</h1>
+				<table>
+					<tr><td><b>Name:</b></td><td><select name="name" type="text">
+							{% for person in person_list %}
+								<option>{{ person.name }}</option>
+							{% endfor %}
+						</select></td></tr>
+					<tr><td><b>Description:</b></td><td><input name="description" type="text"></td></tr>
+				</table>	
+				<button style="text-align:center; margin-top:50px" type = “submit”>Enter</button>
+			</div>
+		</form>
+		<div style="text-align:center;margin-left:auto;margin-right:auto;display:table;"> 
+			<form action="{% url 'index' %}" method="get">
+				<button style="text-align:center; margin-top:50px" type = “submit”>Back to Main Menu</button>
+			</form>
+		</div>
+	{% endif %}
+</body>
+</html>

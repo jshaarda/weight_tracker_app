@@ -1,0 +1,20 @@
+<html>
+<body>
+	<form action="{% url 'updresult' %}" method="get">
+		<div style="text-align:center;margin-left:auto;margin-right:auto;display:table;"> 
+			<h1 style="margin-top:50px">Update Entry</h1>
+			<table>
+				<tr><td><b>Name:</b></td><td><input name="name" type="text" value={{ name }} readonly></td></tr>
+				<tr><td><b>Date:</b></td><td><input name="date" type="date" {{ date|date:"m-d-Y" }}</td></tr>
+				<tr><td><b>Weight:</b></td><td><input name="weight" type="float" value={{ weight }}></td></tr>
+			</table>	
+			<button style="text-align:center; margin-top:50px" type = “submit”>Update</button>
+		</div>
+	</form>
+	<div style="text-align:center;margin-left:auto;margin-right:auto;display:table;"> 
+		<form action="{% url 'index' %}" method="get">
+			<button style="text-align:center; margin-top:50px" type = “submit”>Back to Main Menu</button>
+		</form>
+	</div>
+</body>
+</html>
